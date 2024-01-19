@@ -4,7 +4,7 @@ from PIL import Image
 import os
 
 # Folder to save images
-folder_path = 'train_seating_1901'
+folder_path = 'data_folder'
 
 # Create the folder if it doesn't exist
 if not os.path.exists(folder_path):
@@ -41,7 +41,7 @@ while True:
         # Search for the JPEG end marker (0xFFD9)
         if b'\xFF\xD9' in image_data:
             # Save the received image data to a local file
-            filename = f'{folder_path}/image1_{image_counter}.jpg'
+            filename = f'{folder_path}/image_{image_counter}.jpg'
             with open(filename, 'wb') as file:
                 file.write(image_data)
             print(f"Image {image_counter} received and saved as {filename}.")
